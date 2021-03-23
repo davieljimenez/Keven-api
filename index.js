@@ -19,6 +19,15 @@ app.use('/api/auth', require('./routes/auth.routes'));
 //CRUD: Consultas
 app.use('/api/consultas', require('./routes/consultas.routes'));
 
-app.listen(process.env.PORT, () =>{
+// Index
+app.get("/", (req, res) => {
+    res.json({
+        estado: true,
+        mensaje: "funciona"
+    })
+});
+
+
+app.listen(process.env.PORT, () => {
     console.log('Servidor en puerto ', process.env.PORT)
 });
